@@ -1,0 +1,286 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ClassNaming:KotlinPoetMetadataSpecsTest.kt$Fuzzy$ClassNesting</ID>
+    <ID>ComplexCondition:ClassInspectorUtil.kt$ClassInspectorUtil$!hasGetter &amp;&amp; !hasSetter &amp;&amp; hasField &amp;&amp; !property.isConst</ID>
+    <ID>ComplexCondition:ElementsClassInspector.kt$ElementsClassInspector$ElementsModifier.STATIC !in method.modifiers &amp;&amp; ElementsModifier.FINAL !in method.modifiers &amp;&amp; ElementsModifier.PRIVATE !in method.modifiers &amp;&amp; method.isVisibleFrom(pkg)</ID>
+    <ID>ComplexCondition:KotlinPoetMetadataSpecs.kt$containerData is ClassData &amp;&amp; !containerData.declarationContainer.isAnnotation &amp;&amp; !containerData.declarationContainer.isInterface &amp;&amp; classInspector?.supportsNonRuntimeRetainedAnnotations == false &amp;&amp; modality != Modality.OPEN &amp;&amp; modality != Modality.ABSTRACT</ID>
+    <ID>ComplexCondition:KotlinPoetMetadataSpecs.kt$isInterface &amp;&amp; annotations.none { it.typeName == JVM_DEFAULT } &amp;&amp; (methodData?.jvmModifiers?.contains(DEFAULT) == false) &amp;&amp; !isKotlinDefaultInterfaceMethod()</ID>
+    <ID>ComplexCondition:KotlinPoetMetadataSpecs.kt$superClass != null &amp;&amp; !isEnum &amp;&amp; !isInterface &amp;&amp; !isAnnotation</ID>
+    <ID>ComplexCondition:TypeSpec.kt$TypeSpec$propertySpecs.isNotEmpty() || funSpecs.isNotEmpty() || typeSpecs.isNotEmpty() || initializerBlock.isNotEmpty()</ID>
+    <ID>CyclomaticComplexMethod:Annotations.kt$private fun addValueToBlock(value: Any, member: CodeBlock.Builder, omitDefaultValues: Boolean)</ID>
+    <ID>CyclomaticComplexMethod:ClassName.kt$@JvmName("get") public fun KClass&lt;*&gt;.asClassName(): ClassName</ID>
+    <ID>CyclomaticComplexMethod:CodeBlock.kt$CodeBlock.Builder$public fun add(format: String, vararg args: Any?): Builder</ID>
+    <ID>CyclomaticComplexMethod:CodeWriter.kt$CodeWriter$fun emit(s: String, nonWrapping: Boolean = false)</ID>
+    <ID>CyclomaticComplexMethod:CodeWriter.kt$CodeWriter$fun emitCode( codeBlock: CodeBlock, isConstantContext: Boolean = false, ensureTrailingNewline: Boolean = false, omitImplicitModifiers: Boolean = false, )</ID>
+    <ID>CyclomaticComplexMethod:ElementsClassInspector.kt$ElementsClassInspector$@OptIn(DelicateKotlinPoetApi::class) override fun containerData( declarationContainer: KmDeclarationContainer, className: ClassName, parentClassName: ClassName?, ): ContainerData</ID>
+    <ID>CyclomaticComplexMethod:FileSpec.kt$FileSpec$private fun emit(codeWriter: CodeWriter, collectingImports: Boolean)</ID>
+    <ID>CyclomaticComplexMethod:K2jInterop.kt$@KotlinPoetJavaPoetPreview public fun KClassName.toJClassName(boxIfPrimitive: Boolean = false): JTypeName</ID>
+    <ID>CyclomaticComplexMethod:KmTypes.kt$internal fun KmType.toTypeName( typeParamResolver: TypeParameterResolver, ): TypeName</ID>
+    <ID>CyclomaticComplexMethod:KotlinPoetMetadataSpecs.kt$private fun KmClass.toTypeSpec( classInspector: ClassInspector?, className: ClassName, parentClassName: ClassName?, ): TypeSpec</ID>
+    <ID>CyclomaticComplexMethod:KotlinPoetMetadataSpecs.kt$private fun KmFunction.toFunSpec( classTypeParamsResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, classInspector: ClassInspector? = null, containerData: ContainerData? = null, methodData: MethodData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): FunSpec</ID>
+    <ID>CyclomaticComplexMethod:KotlinPoetMetadataSpecs.kt$private fun KmProperty.toPropertySpec( typeParamResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, isConstructorParam: Boolean = false, classInspector: ClassInspector? = null, containerData: ContainerData? = null, propertyData: PropertyData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): PropertySpec</ID>
+    <ID>CyclomaticComplexMethod:Modifiers.kt$public fun Modifier.toKModifier(): KModifier?</ID>
+    <ID>CyclomaticComplexMethod:PropertySpec.kt$PropertySpec$internal fun emit( codeWriter: CodeWriter, implicitModifiers: Set&lt;KModifier&gt;, withInitializer: Boolean = true, emitKdoc: Boolean = true, inline: Boolean = false, inlineAnnotations: Boolean = inline, )</ID>
+    <ID>CyclomaticComplexMethod:ReflectiveClassInspector.kt$ReflectiveClassInspector$@OptIn(DelicateKotlinPoetApi::class) override fun containerData( declarationContainer: KmDeclarationContainer, className: ClassName, parentClassName: ClassName?, ): ContainerData</ID>
+    <ID>CyclomaticComplexMethod:TaggableTest.kt$TaggableTest$private fun Taggable.Builder&lt;*&gt;.buildTaggable(): Taggable</ID>
+    <ID>CyclomaticComplexMethod:TestProcessor.kt$TestProcessor$private fun process(decl: KSAnnotated)</ID>
+    <ID>CyclomaticComplexMethod:TypeName.kt$TypeName.Companion$internal fun get(type: Type, map: MutableMap&lt;Type, TypeVariableName&gt;): TypeName</ID>
+    <ID>CyclomaticComplexMethod:TypeSpec.kt$TypeSpec$internal fun emit( codeWriter: CodeWriter, enumName: String?, implicitModifiers: Set&lt;KModifier&gt; = emptySet(), isNestedExternal: Boolean = false, )</ID>
+    <ID>CyclomaticComplexMethod:TypeSpec.kt$TypeSpec.Builder$public fun build(): TypeSpec</ID>
+    <ID>CyclomaticComplexMethod:Util.kt$internal fun stringLiteralWithQuotes( value: String, isInsideRawString: Boolean = false, isConstantContext: Boolean = false, ): String</ID>
+    <ID>CyclomaticComplexMethod:j2kInterop.kt$@KotlinPoetJavaPoetPreview public fun JClassName.toKClassName(): KClassName</ID>
+    <ID>CyclomaticComplexMethod:j2kInterop.kt$@KotlinPoetJavaPoetPreview public fun JTypeName.toKTypeName(): KTypeName</ID>
+    <ID>CyclomaticComplexMethod:kmAnnotations.kt$internal fun KmAnnotationArgument.toCodeBlock(): CodeBlock</ID>
+    <ID>EmptyFunctionBlock:FacadeFile.kt${ }</ID>
+    <ID>EmptyFunctionBlock:FunSpecTest.kt$FunSpecTest.InvalidOverrideMethods${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.AbstractClass${}</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.AbstractModalities${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.AnnotationHolders${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Asset${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.FinalAbstractModalities${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.FunctionsReferencingTypeParameters${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.GenericClass${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.JvmAnnotations${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.JvmNameData${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.LambdaReceiver${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Modalities${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Overloads${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.OverriddenThings${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.ParameterAnnotations${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Parameters${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.SuspendTypes${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Synthetics${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.TaggedTypes${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.TestSubInterfaceImpl${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Throwing${ }</ID>
+    <ID>EmptyFunctionBlock:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.TypeAnnotations${ }</ID>
+    <ID>FunctionOnlyReturningConstant:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.AbstractClass$fun fuzWithReturn(): String</ID>
+    <ID>FunctionOnlyReturningConstant:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Parameters$inline fun noinline(noinline param1: () -&gt; String): String</ID>
+    <ID>FunctionParameterNaming:AbstractTypesTest.kt$AbstractTypesTest$`class`: Class&lt;*&gt;</ID>
+    <ID>FunctionParameterNaming:FileSpec.kt$FileSpec.Builder$`as`: String</ID>
+    <ID>FunctionParameterNaming:FileSpec.kt$FileSpec.Builder$`class`: Class&lt;*&gt;</ID>
+    <ID>FunctionParameterNaming:FileSpec.kt$FileSpec.Builder$`class`: KClass&lt;*&gt;</ID>
+    <ID>FunctionParameterNaming:FunSpecTest.kt$FunSpecTest$`class`: Class&lt;*&gt;</ID>
+    <ID>FunctionParameterNaming:TypeSpecTest.kt$TypeSpecTest$`class`: Class&lt;*&gt;</ID>
+    <ID>FunctionParameterNaming:TypeSpecTest.kt$TypeSpecTest$`class`: KClass&lt;*&gt;</ID>
+    <ID>ImplicitDefaultLocale:CodeBlock.kt$CodeBlock.Builder$String.format("invalid format string: '%s'", format)</ID>
+    <ID>LargeClass:CodeBlockTest.kt$CodeBlockTest</ID>
+    <ID>LargeClass:FileSpecTest.kt$FileSpecTest</ID>
+    <ID>LargeClass:FunSpecTest.kt$FunSpecTest</ID>
+    <ID>LargeClass:JvmAnnotationsTest.kt$JvmAnnotationsTest</ID>
+    <ID>LargeClass:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest : MultiClassInspectorTest</ID>
+    <ID>LargeClass:KotlinPoetTest.kt$KotlinPoetTest</ID>
+    <ID>LargeClass:MemberNameTest.kt$MemberNameTest</ID>
+    <ID>LargeClass:PropertySpecTest.kt$PropertySpecTest</ID>
+    <ID>LargeClass:TestProcessorTest.kt$TestProcessorTest</ID>
+    <ID>LargeClass:TypeSpecTest.kt$TypeSpecTest</ID>
+    <ID>LongMethod:AnnotationSpecTest.kt$AnnotationSpecTest$@Test fun annotationsWithTypeParameters()</ID>
+    <ID>LongMethod:CodeBlock.kt$CodeBlock.Builder$public fun add(format: String, vararg args: Any?): Builder</ID>
+    <ID>LongMethod:CodeWriter.kt$CodeWriter$fun emitCode( codeBlock: CodeBlock, isConstantContext: Boolean = false, ensureTrailingNewline: Boolean = false, omitImplicitModifiers: Boolean = false, )</ID>
+    <ID>LongMethod:CrossplatformTest.kt$CrossplatformTest$@Test fun crossplatform()</ID>
+    <ID>LongMethod:ElementsClassInspector.kt$ElementsClassInspector$@OptIn(DelicateKotlinPoetApi::class) override fun containerData( declarationContainer: KmDeclarationContainer, className: ClassName, parentClassName: ClassName?, ): ContainerData</ID>
+    <ID>LongMethod:FacadeFileTest.kt$FacadeFileTest$@IgnoreForHandlerType( handlerType = ELEMENTS, reason = "Elements can detect JvmOverloads, JvmName not possible in reflection", ) @Test fun facadeFile_reflective()</ID>
+    <ID>LongMethod:FacadeFileTest.kt$FacadeFileTest$@IgnoreForHandlerType( handlerType = REFLECTIVE, reason = "Elements can detect JvmOverloads, JvmName not possible in reflection", ) @Test fun facadeFile_elements()</ID>
+    <ID>LongMethod:KmTypes.kt$internal fun KmType.toTypeName( typeParamResolver: TypeParameterResolver, ): TypeName</ID>
+    <ID>LongMethod:KotlinPoetMetadataSpecs.kt$private fun KmClass.toTypeSpec( classInspector: ClassInspector?, className: ClassName, parentClassName: ClassName?, ): TypeSpec</ID>
+    <ID>LongMethod:KotlinPoetMetadataSpecs.kt$private fun KmFunction.toFunSpec( classTypeParamsResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, classInspector: ClassInspector? = null, containerData: ContainerData? = null, methodData: MethodData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): FunSpec</ID>
+    <ID>LongMethod:KotlinPoetMetadataSpecs.kt$private fun KmProperty.toPropertySpec( typeParamResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, isConstructorParam: Boolean = false, classInspector: ClassInspector? = null, containerData: ContainerData? = null, propertyData: PropertyData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): PropertySpec</ID>
+    <ID>LongMethod:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest$@IgnoreForHandlerType( reason = "Elements properly resolves the regular properties + JvmStatic, but reflection will not", handlerType = ELEMENTS, ) @Test fun constantValuesReflective()</ID>
+    <ID>LongMethod:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest$@IgnoreForHandlerType( reason = "Elements properly resolves the regular properties + JvmStatic, but reflection will not", handlerType = REFLECTIVE, ) @Test fun constantValuesElements()</ID>
+    <ID>LongMethod:KotlinPoetTest.kt$KotlinPoetTest$@Test fun primaryConstructorProperties()</ID>
+    <ID>LongMethod:LineWrappingTest.kt$LineWrappingTest$@Test fun parameterWrapping()</ID>
+    <ID>LongMethod:PropertySpec.kt$PropertySpec$internal fun emit( codeWriter: CodeWriter, implicitModifiers: Set&lt;KModifier&gt;, withInitializer: Boolean = true, emitKdoc: Boolean = true, inline: Boolean = false, inlineAnnotations: Boolean = inline, )</ID>
+    <ID>LongMethod:ReflectiveClassInspector.kt$ReflectiveClassInspector$@OptIn(DelicateKotlinPoetApi::class) override fun containerData( declarationContainer: KmDeclarationContainer, className: ClassName, parentClassName: ClassName?, ): ContainerData</ID>
+    <ID>LongMethod:TestProcessor.kt$TestProcessor$private fun process(decl: KSAnnotated)</ID>
+    <ID>LongMethod:TestProcessorTest.kt$TestProcessorTest$@Test fun removeDefaultValues()</ID>
+    <ID>LongMethod:TestProcessorTest.kt$TestProcessorTest$@Test fun smokeTest()</ID>
+    <ID>LongMethod:TypeSpec.kt$TypeSpec$internal fun emit( codeWriter: CodeWriter, enumName: String?, implicitModifiers: Set&lt;KModifier&gt; = emptySet(), isNestedExternal: Boolean = false, )</ID>
+    <ID>LongMethod:TypeSpec.kt$TypeSpec.Builder$public fun build(): TypeSpec</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun annotationWithNestedTypes()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun codeBlocks()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun enumWithSubclassing()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun kdocFormatting()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun kdocWithParameters()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun multilineStatementWithAnonymousClass()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun nestedClasses()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun overrideInternalAbstractFunctionVisibility()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun referencedAndDeclaredSimpleNamesConflict()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun retrofitStyleInterface()</ID>
+    <ID>LongMethod:TypeSpecTest.kt$TypeSpecTest$@Test fun typeVariables()</ID>
+    <ID>LongParameterList:AnnotationSpecTest.kt$AnnotationSpecTest.HasDefaultsAnnotation$( val a: Byte = 5, val b: Short = 6, val c: Int = 7, val d: Long = 8, val e: Float = 9.0f, val f: Double = 10.0, val g: CharArray = ['\u0000', '\uCAFE', 'z', '€', 'ℕ', '"', '\'', '\t', '\n'], val h: Boolean = true, val i: Breakfast = Breakfast.WAFFLES, val j: AnnotationA = AnnotationA(), val k: String = "maple", val l: KClass&lt;out Annotation&gt; = AnnotationB::class, val m: IntArray = [1, 2, 3], val n: Array&lt;Breakfast&gt; = [Breakfast.WAFFLES, Breakfast.PANCAKES], val o: Breakfast, val p: Int, val q: AnnotationC = AnnotationC("foo"), val r: Array&lt;KClass&lt;out Number&gt;&gt; = [Byte::class, Short::class, Int::class, Long::class], val s: Array&lt;AnnotationC&gt; = [AnnotationC("foo"), AnnotationC("bar")], )</ID>
+    <ID>LongParameterList:ClassInspectorUtil.kt$ClassInspectorUtil$( property: KmProperty, classInspector: ClassInspector, isCompanionObject: Boolean, hasGetter: Boolean, hasSetter: Boolean, hasField: Boolean, )</ID>
+    <ID>LongParameterList:KotlinPoetMetadataSpecs.kt$( typeParamResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, isConstructorParam: Boolean = false, classInspector: ClassInspector? = null, containerData: ContainerData? = null, propertyData: PropertyData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, )</ID>
+    <ID>LongParameterList:LambdaTypeName.kt$LambdaTypeName$( public val receiver: TypeName? = null, @property:ExperimentalKotlinPoetApi public val contextReceivers: List&lt;TypeName&gt; = emptyList(), @property:ExperimentalKotlinPoetApi public val contextParameters: List&lt;TypeName&gt; = emptyList(), parameters: List&lt;ParameterSpec&gt; = emptyList(), public val returnType: TypeName = UNIT, nullable: Boolean = false, public val isSuspending: Boolean = false, annotations: List&lt;AnnotationSpec&gt; = emptyList(), tags: Map&lt;KClass&lt;*&gt;, Any&gt; = emptyMap(), )</ID>
+    <ID>LongParameterList:PropertySpec.kt$PropertySpec$( codeWriter: CodeWriter, implicitModifiers: Set&lt;KModifier&gt;, withInitializer: Boolean = true, emitKdoc: Boolean = true, inline: Boolean = false, inlineAnnotations: Boolean = inline, )</ID>
+    <ID>LongParameterList:TypeVariableName.kt$TypeVariableName$( public val name: String, public val bounds: List&lt;TypeName&gt;, /** Either [KModifier.IN], [KModifier.OUT], or null. */ public val variance: KModifier? = null, public val isReified: Boolean = false, nullable: Boolean = false, annotations: List&lt;AnnotationSpec&gt; = emptyList(), tags: Map&lt;KClass&lt;*&gt;, Any&gt; = emptyMap(), )</ID>
+    <ID>LongParameterList:Util.kt$(t1: T, t2: T, t3: T? = null, t4: T? = null, t5: T? = null, t6: T? = null)</ID>
+    <ID>LongParameterList:exampleAnnotations.kt$ComprehensiveAnnotation$( val boolean: Boolean, val booleanArray: BooleanArray, val byte: Byte, val byteArray: ByteArray, val char: Char, val charArray: CharArray, val short: Short, val shortArray: ShortArray, val int: Int, val intArray: IntArray, val long: Long, val longArray: LongArray, val float: Float, val floatArray: FloatArray, val double: Double, val doubleArray: DoubleArray, val string: String, val stringArray: Array&lt;String&gt;, val someClass: KClass&lt;*&gt;, val someClasses: Array&lt;KClass&lt;*&gt;&gt;, val enumValue: AnnotationEnumValue, val enumValueArray: Array&lt;AnnotationEnumValue&gt;, val anotherAnnotation: AnotherAnnotation, val anotherAnnotationArray: Array&lt;AnotherAnnotation&gt;, // This is still included even when the argument is omitted until https://github.com/google/ksp/issues/674 val defaultingString: String = "defaultValue", )</ID>
+    <ID>LongParameterList:exampleAnnotations.kt$ExampleAnnotationWithDefaults$( val boolean: Boolean = true, val booleanArray: BooleanArray = [true], val byte: Byte = 1, val byteArray: ByteArray = [1], val char: Char = 'C', val charArray: CharArray = ['C'], val short: Short = 1, val shortArray: ShortArray = [1], val int: Int = 1, val intArray: IntArray = [1], val long: Long = 1, val longArray: LongArray = [1], val float: Float = 1.0f, val floatArray: FloatArray = [1.0f], val double: Double = 1.0, val doubleArray: DoubleArray = [1.0], val string: String = "", val stringArray: Array&lt;String&gt; = [""], val someClass: KClass&lt;*&gt; = String::class, val someClasses: Array&lt;KClass&lt;*&gt;&gt; = [String::class], val enumValue: AnnotationEnumValue = AnnotationEnumValue.ONE, val enumValueArray: Array&lt;AnnotationEnumValue&gt; = [AnnotationEnumValue.ONE], val anotherAnnotation: AnotherAnnotation = AnotherAnnotation(""), val anotherAnnotationArray: Array&lt;AnotherAnnotation&gt; = [AnotherAnnotation("")], )</ID>
+    <ID>LoopWithTooManyJumpStatements:AnnotationSpec.kt$AnnotationSpec.Companion$for</ID>
+    <ID>LoopWithTooManyJumpStatements:Annotations.kt$for</ID>
+    <ID>LoopWithTooManyJumpStatements:CodeBlock.kt$CodeBlock.Builder$while</ID>
+    <ID>LoopWithTooManyJumpStatements:TypeSpec.kt$TypeSpec$for</ID>
+    <ID>LoopWithTooManyJumpStatements:Util.kt$for</ID>
+    <ID>MagicNumber:CodePoint.nonJvm.kt$0x10000</ID>
+    <ID>MagicNumber:CodePoint.nonJvm.kt$0x3ff</ID>
+    <ID>MagicNumber:CodePoint.nonJvm.kt$10</ID>
+    <ID>MagicNumber:NameAllocator.kt$NameAllocator$16</ID>
+    <ID>MagicNumber:Util.kt$16</ID>
+    <ID>MagicNumber:Util.kt$3</ID>
+    <ID>MagicNumber:Util.kt$32</ID>
+    <ID>MagicNumber:Util.kt$4</ID>
+    <ID>MagicNumber:utils.kt$23</ID>
+    <ID>MatchingDeclarationName:FacadeFile.kt$FileAnnotation</ID>
+    <ID>MatchingDeclarationName:Util.kt$NullAppendable : Appendable</ID>
+    <ID>MaxLineLength:AbstractTypesTest.kt$AbstractTypesTest$.</ID>
+    <ID>MaxLineLength:AbstractTypesTest.kt$AbstractTypesTest$assertThat(Map.Entry::class.createType(listOf(KTypeProjection(KVariance.INVARIANT, String::class.createType(emptyList())), KTypeProjection.STAR)).asTypeName().toString())</ID>
+    <ID>MaxLineLength:AbstractTypesTest.kt$AbstractTypesTest$assertThat(Map::class.createType(listOf(KTypeProjection(KVariance.INVARIANT, String::class.createType(emptyList())), KTypeProjection.STAR)).asTypeName().toString())</ID>
+    <ID>MaxLineLength:ClassNameTest.kt$ClassNameTest$assertThat(foo.copy(annotations = listOf(AnnotationSpec.Builder(Suppress::class.asClassName()).build()))).isNotEqualTo(foo)</ID>
+    <ID>MaxLineLength:CodeBlock.kt$CodeBlock.Builder$is ContextParameter -&gt; if (o.name == "_") throw IllegalStateException("Named context parameter required") else o.name</ID>
+    <ID>MaxLineLength:ElementsClassInspector.kt$ElementsClassInspector.Companion$*</ID>
+    <ID>MaxLineLength:FileSpecTest.kt$FileSpecTest$.</ID>
+    <ID>MaxLineLength:FileSpecTest.kt$FileSpecTest$val</ID>
+    <ID>MaxLineLength:FunSpecTest.kt$FunSpecTest$.</ID>
+    <ID>MaxLineLength:JvmDescriptorUtils.kt$*</ID>
+    <ID>MaxLineLength:JvmDescriptorUtils.kt$JvmDescriptorTypeVisitor$*</ID>
+    <ID>MaxLineLength:KotlinPoetMetadataSpecs.kt$"No ClassInspector was available during metadata parsing, so this companion object's API/contents may not be reflected accurately."</ID>
+    <ID>MaxLineLength:KotlinPoetMetadataSpecs.kt$"No ClassInspector was available during metadata parsing, so this entry may not be reflected accurately if it has a class body."</ID>
+    <ID>MaxLineLength:KotlinPoetMetadataSpecs.kt$"No ClassInspector was available during metadata parsing, so this nested class's API/contents may not be reflected accurately."</ID>
+    <ID>MaxLineLength:KotlinPoetTest.kt$KotlinPoetTest$val samePackageIsNullOrEmpty = MemberName(packageName = "com.example", simpleName = "isNullOrEmpty", isExtension = true)</ID>
+    <ID>MaxLineLength:MultiClassInspectorTest.kt$MultiClassInspectorTest.ClassInspectorType.ELEMENTS$return ElementsClassInspector.create(lenient = false, testInstance.compilation.elements, testInstance.compilation.types)</ID>
+    <ID>MaxLineLength:OriginatingKSFiles.kt$MutableOriginatingKSFilesImpl : MutableOriginatingKSFiles</ID>
+    <ID>MaxLineLength:ParameterSpec.kt$ParameterSpec$throw IllegalArgumentException("Modifiers $this are not allowed on Kotlin parameters. Allowed modifiers: $ALLOWED_PARAMETER_MODIFIERS")</ID>
+    <ID>MaxLineLength:ParameterSpecTest.kt$ParameterSpecTest$.</ID>
+    <ID>MaxLineLength:ParameterizedTypeNameTest.kt$ParameterizedTypeNameTest$@Test fun kTypeOutAnyOnTypeWithoutBoundsVariance()</ID>
+    <ID>MaxLineLength:ParameterizedTypeNameTest.kt$ParameterizedTypeNameTest$assertThat(parameterizedTypeName1.copy(annotations = listOf(AnnotationSpec.builder(Suppress::class).build()))).isNotEqualTo(parameterizedTypeName1)</ID>
+    <ID>MaxLineLength:ParameterizedTypeNameTest.kt$ParameterizedTypeNameTest$private fun assertKTypeProjections(kType: KType)</ID>
+    <ID>MaxLineLength:ReflectiveClassInspector.kt$ReflectiveClassInspector.Companion$*</ID>
+    <ID>MaxLineLength:ReflectiveClassInspector.kt$ReflectiveClassInspector.Companion$* @param lenient see docs on [KotlinClassMetadata.readStrict] and [KotlinClassMetadata.readLenient] for more details.</ID>
+    <ID>MaxLineLength:StringsTest.kt$StringsTest$.</ID>
+    <ID>MaxLineLength:StringsTest.kt$StringsTest$val string = "SELECT * FROM socialFeedItem WHERE message IS NOT NULL AND userId \${ if (userId == null) \"IS\" else \"=\" } ?1 ORDER BY datetime(creation_time) DESC"</ID>
+    <ID>MaxLineLength:TestFiler.kt$TestFiler$fun getOriginatingElements(path: Path)</ID>
+    <ID>MaxLineLength:TypeAliasUnwrapping.kt$else -&gt; throw UnsupportedOperationException("Type '${javaClass.simpleName}' is illegal. Only classes, parameterized types, wildcard types, or type variables are allowed.")</ID>
+    <ID>MaxLineLength:TypeNameKotlinTest.kt$TypeNameKotlinTest$assertThat(type.toString()).isEqualTo("kotlin.collections.Map&lt;kotlin.String, kotlin.collections.List&lt;kotlin.collections.Map&lt;*, com.squareup.kotlinpoet.TypeNameKotlinTest.GenericType&lt;in kotlin.collections.Set&lt;kotlin.Array&lt;com.squareup.kotlinpoet.TypeNameKotlinTest.GenericType&lt;out kotlin.String&gt;?&gt;&gt;&gt;&gt;&gt;&gt;")</ID>
+    <ID>MaxLineLength:TypeParameterResolver.kt$TypeParameterResolver.Companion.&lt;no name provided&gt;$override fun get(index: String): TypeVariableName</ID>
+    <ID>MaxLineLength:TypeSpec.kt$TypeSpec$if</ID>
+    <ID>MaxLineLength:TypeSpec.kt$TypeSpec$typeSpec.emit(codeWriter, null, kind.implicitTypeModifiers(modifiers + implicitModifiers), isNestedExternal = areNestedExternal)</ID>
+    <ID>MaxLineLength:TypeSpec.kt$TypeSpec.Companion$public</ID>
+    <ID>MaxLineLength:TypeSpecTest.kt$TypeSpecTest$"types without a primary constructor cannot specify secondary constructors and superclass constructor parameters"</ID>
+    <ID>MaxLineLength:TypeSpecTest.kt$TypeSpecTest$.</ID>
+    <ID>MaxLineLength:Util.kt$private fun String.escapeIfAllCharactersAreUnderscore()</ID>
+    <ID>MaxLineLength:WildcardTypeNameTest.kt$WildcardTypeNameTest$assertThat(anyProducer.copy(annotations = listOf(AnnotationSpec.builder(Suppress::class).build()))).isNotEqualTo(anyProducer)</ID>
+    <ID>MayBeConst:FacadeFile.kt$val BINARY_PROP = 0b00001011</ID>
+    <ID>MayBeConst:FacadeFile.kt$val BOOL_PROP = false</ID>
+    <ID>MayBeConst:FacadeFile.kt$val DOUBLE_PROP = 1.0</ID>
+    <ID>MayBeConst:FacadeFile.kt$val FLOAT_PROP = 1.0f</ID>
+    <ID>MayBeConst:FacadeFile.kt$val HEX_PROP = 0x0F</ID>
+    <ID>MayBeConst:FacadeFile.kt$val INT_PROP = 1</ID>
+    <ID>MayBeConst:FacadeFile.kt$val LONG_PROP = 1L</ID>
+    <ID>MayBeConst:FacadeFile.kt$val STRING_PROP = "prop"</ID>
+    <ID>MayBeConst:FacadeFile.kt$val UNDERSCORES_HEX_PROP = 0xFF_EC_DE_5E</ID>
+    <ID>MayBeConst:FacadeFile.kt$val UNDERSCORES_PROP = 1_000_000</ID>
+    <ID>MayBeConst:JvmNameWithKtFacadeFile.kt$val prop2: String = ""</ID>
+    <ID>MayBeConst:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.Fields.Companion$@JvmField val companionProp: String = ""</ID>
+    <ID>MayBeConst:NoJvmNameFacadeFile.kt$val prop: String = ""</ID>
+    <ID>MemberNameEqualsClassName:FunSpecTest.kt$FunSpecTest.Everything$@Deprecated("") @Throws(IOException::class, SecurityException::class) protected abstract fun &lt;T&gt; everything( @Nullable thing: String, things: List&lt;T&gt;, ): Runnable</ID>
+    <ID>MemberNameEqualsClassName:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest.LambdaReceiver$fun lambdaReceiver(block: String.() -&gt; Unit)</ID>
+    <ID>NestedBlockDepth:AnnotationSpec.kt$AnnotationSpec.Companion$@DelicateKotlinPoetApi( message = "Java reflection APIs don't give complete information on Kotlin types. Consider " + "using the kotlinpoet-metadata APIs instead.", ) @JvmStatic @JvmOverloads public fun get( annotation: Annotation, includeDefaultValues: Boolean = false, ): AnnotationSpec</ID>
+    <ID>NestedBlockDepth:ClassName.kt$@JvmName("get") public fun KClass&lt;*&gt;.asClassName(): ClassName</ID>
+    <ID>NestedBlockDepth:CodeBlock.kt$CodeBlock.Builder$public fun add(format: String, vararg args: Any?): Builder</ID>
+    <ID>NestedBlockDepth:CodeWriter.kt$CodeWriter$fun emit(s: String, nonWrapping: Boolean = false)</ID>
+    <ID>NestedBlockDepth:CodeWriter.kt$CodeWriter$fun emitCode( codeBlock: CodeBlock, isConstantContext: Boolean = false, ensureTrailingNewline: Boolean = false, omitImplicitModifiers: Boolean = false, )</ID>
+    <ID>NestedBlockDepth:CodeWriter.kt$CodeWriter$fun emitWhereBlock(typeVariables: List&lt;TypeVariableName&gt;)</ID>
+    <ID>NestedBlockDepth:KmTypes.kt$internal fun KmType.toTypeName( typeParamResolver: TypeParameterResolver, ): TypeName</ID>
+    <ID>NestedBlockDepth:KotlinPoetMetadataSpecs.kt$private fun KmClass.toTypeSpec( classInspector: ClassInspector?, className: ClassName, parentClassName: ClassName?, ): TypeSpec</ID>
+    <ID>NestedBlockDepth:KotlinPoetMetadataSpecs.kt$private fun KmFunction.toFunSpec( classTypeParamsResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, classInspector: ClassInspector? = null, containerData: ContainerData? = null, methodData: MethodData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): FunSpec</ID>
+    <ID>NestedBlockDepth:KotlinPoetMetadataSpecs.kt$private fun KmProperty.toPropertySpec( typeParamResolver: TypeParameterResolver = TypeParameterResolver.EMPTY, isConstructorParam: Boolean = false, classInspector: ClassInspector? = null, containerData: ContainerData? = null, propertyData: PropertyData? = null, isInInterface: Boolean = containerData?.isInterface ?: false, ): PropertySpec</ID>
+    <ID>NestedBlockDepth:TypeSpec.kt$TypeSpec$internal fun emit( codeWriter: CodeWriter, enumName: String?, implicitModifiers: Set&lt;KModifier&gt; = emptySet(), isNestedExternal: Boolean = false, )</ID>
+    <ID>NestedBlockDepth:TypeSpec.kt$TypeSpec.Builder$public fun build(): TypeSpec</ID>
+    <ID>NestedBlockDepth:Util.jvm.kt$internal fun CodeBlock.trimTrailingNewLine(replaceWith: Char? = null)</ID>
+    <ID>PackageNaming:Sup.kt$package com.squareup.kotlinpoet.Cased.Weird</ID>
+    <ID>ReturnCount:Annotations.kt$private fun isDefaultValue(value: Any?, defaultValue: Any?): Boolean</ID>
+    <ID>ReturnCount:CodeBlock.kt$CodeBlock$internal fun withoutPrefix(prefix: CodeBlock): CodeBlock?</ID>
+    <ID>ReturnCount:CodeWriter.kt$CodeWriter$fun lookupName(className: ClassName): String</ID>
+    <ID>ReturnCount:CodeWriter.kt$CodeWriter$fun lookupName(memberName: MemberName): String</ID>
+    <ID>ReturnCount:CodeWriter.kt$CodeWriter$private fun emitStaticImportMember(canonical: String, part: String): Boolean</ID>
+    <ID>ReturnCount:CodeWriter.kt$CodeWriter$private fun resolve(simpleName: String): ClassName?</ID>
+    <ID>ReturnCount:CodeWriter.kt$CodeWriter$private fun shouldEmitPublicModifier( modifiers: Set&lt;KModifier&gt;, implicitModifiers: Set&lt;KModifier&gt;, ): Boolean</ID>
+    <ID>ReturnCount:FunSpec.kt$FunSpec$private fun CodeBlock.asExpressionBody(): CodeBlock?</ID>
+    <ID>ReturnCount:FunSpec.kt$FunSpec$private fun emitUnitReturnType(): Boolean</ID>
+    <ID>ReturnCount:KmTypes.kt$internal fun KmType.toTypeName( typeParamResolver: TypeParameterResolver, ): TypeName</ID>
+    <ID>ReturnCount:KsTypes.kt$public fun KSType.toClassNameOrNull(): ClassName?</ID>
+    <ID>ReturnCount:TypeSpec.kt$TypeSpec$internal fun emit( codeWriter: CodeWriter, enumName: String?, implicitModifiers: Set&lt;KModifier&gt; = emptySet(), isNestedExternal: Boolean = false, )</ID>
+    <ID>ReturnCount:Util.kt$internal fun String.escapeAsAlias(validate: Boolean = true): String</ID>
+    <ID>SpreadOperator:ClassName.kt$ClassName$(packageName, *simpleNames)</ID>
+    <ID>SpreadOperator:ClassName.kt$ClassName$(packageName, simpleName, *simpleNames)</ID>
+    <ID>SpreadOperator:CodeBlock.kt$(placeholders.joinToString(separator, prefix, suffix), *blocks)</ID>
+    <ID>SpreadOperator:FileSpec.kt$FileSpec$( StandardLocation.SOURCE_OUTPUT, packageName, "$name.$extension", *originatingElements.toTypedArray(), )</ID>
+    <ID>SpreadOperator:FunSpec.kt$FunSpec.Companion$(throwsValueString, *method.thrownTypes.toTypedArray())</ID>
+    <ID>SpreadOperator:K2jInterop.kt$( rawType.toJClassName() as JClassName, *typeArguments.map { it.toJTypeName(boxIfPrimitive = true) }.toTypedArray(), )</ID>
+    <ID>SpreadOperator:K2jInterop.kt$(name, *bounds.map { it.toJTypeName(boxIfPrimitive = true) }.toTypedArray())</ID>
+    <ID>SpreadOperator:K2jInterop.kt$(packageName, simpleNames.first(), *simpleNames.drop(1).toTypedArray())</ID>
+    <ID>SpreadOperator:OriginatingKSFiles.kt$(aggregating, *originatingKSFiles.toList().toTypedArray())</ID>
+    <ID>SpreadOperator:ParameterSpec.kt$ParameterSpec$(name, type, *modifiers)</ID>
+    <ID>SpreadOperator:TypeSpec.kt$TypeSpec.Builder$(*modifiers)</ID>
+    <ID>SpreadOperator:j2kInterop.kt$(*typeArguments.map { it.toKTypeName() }.toTypedArray())</ID>
+    <ID>SpreadOperator:j2kInterop.kt$(name, *bounds.map { it.toKTypeName() }.toTypedArray())</ID>
+    <ID>SpreadOperator:j2kInterop.kt$(packageName(), simpleNames().first(), *simpleNames().drop(1).toTypedArray())</ID>
+    <ID>SwallowedException:ReflectiveClassInspector.kt$ReflectiveClassInspector$e: ClassNotFoundException</ID>
+    <ID>ThrowsCount:KotlinPoetMetadata.kt$internal inline fun &lt;reified T : KotlinClassMetadata&gt; Metadata.toKotlinClassMetadata( lenient: Boolean, ): T</ID>
+    <ID>ThrowsCount:KsTypesTest.kt$KsTypesTest$@Test fun errorTypesShouldFail()</ID>
+    <ID>ThrowsCount:TypeSpec.kt$TypeSpec.Builder$public fun build(): TypeSpec</ID>
+    <ID>TooGenericExceptionCaught:AnnotationSpec.kt$AnnotationSpec.Companion$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileSpec.kt$FileSpec$e: Exception</ID>
+    <ID>TooGenericExceptionThrown:AnnotationSpec.kt$AnnotationSpec.Companion$throw RuntimeException("Reflecting $annotation failed!", e)</ID>
+    <ID>TooGenericExceptionThrown:KotlinPoetMetadata.kt$throw RuntimeException("Recorded unknown metadata type! $metadata")</ID>
+    <ID>TooGenericExceptionThrown:ReflectiveClassInspector.kt$ReflectiveClassInspector.Companion$throw RuntimeException("Unrecognized primitive $this")</ID>
+    <ID>TooManyFunctions:ClassName.kt$ClassName : TypeNameComparable</ID>
+    <ID>TooManyFunctions:CodeBlock.kt$CodeBlock</ID>
+    <ID>TooManyFunctions:CodeBlock.kt$CodeBlock$Builder</ID>
+    <ID>TooManyFunctions:CodeWriter.kt$CodeWriter : Closeable</ID>
+    <ID>TooManyFunctions:ElementsClassInspector.kt$ElementsClassInspector : ClassInspector</ID>
+    <ID>TooManyFunctions:FileSpec.kt$FileSpec : TaggableAnnotatableTypeSpecHolderMemberSpecHolder</ID>
+    <ID>TooManyFunctions:FileSpec.kt$FileSpec$Builder : BuilderBuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:FunSpec.kt$FunSpec : TaggableOriginatingElementsHolderContextReceivableContextParameterizableAnnotatableDocumentable</ID>
+    <ID>TooManyFunctions:FunSpec.kt$FunSpec$Builder : BuilderBuilderBuilderBuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:JvmAnnotations.kt$com.squareup.kotlinpoet.jvm.JvmAnnotations.kt</ID>
+    <ID>TooManyFunctions:JvmDescriptorUtils.kt$JvmDescriptorTypeVisitor : AbstractTypeVisitor8</ID>
+    <ID>TooManyFunctions:KotlinPoetMetadataSpecs.kt$com.squareup.kotlinpoet.metadata.specs.KotlinPoetMetadataSpecs.kt</ID>
+    <ID>TooManyFunctions:OriginatingKSFiles.kt$com.squareup.kotlinpoet.ksp.OriginatingKSFiles.kt</ID>
+    <ID>TooManyFunctions:ParameterSpec.kt$ParameterSpec$Builder : BuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:ParameterSpec.kt$ParameterSpec$Companion</ID>
+    <ID>TooManyFunctions:ParameterizedTypeName.kt$ParameterizedTypeName$Companion</ID>
+    <ID>TooManyFunctions:PropertySpec.kt$PropertySpec$Builder : BuilderBuilderBuilderBuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:ReflectiveClassInspector.kt$ReflectiveClassInspector : ClassInspector</ID>
+    <ID>TooManyFunctions:TypeAliasSpec.kt$TypeAliasSpec$Builder : BuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:TypeSpec.kt$TypeSpec$Builder : BuilderBuilderBuilderBuilderBuilderBuilderBuilder</ID>
+    <ID>TooManyFunctions:TypeSpec.kt$TypeSpec$Companion</ID>
+    <ID>TooManyFunctions:Util.kt$com.squareup.kotlinpoet.Util.kt</ID>
+    <ID>UnusedPrivateMember:FunSpecTest.kt$FunSpecTest.InvalidOverrideMethods$private fun privateMethod()</ID>
+    <ID>UnusedPrivateProperty:CodeWriter.kt$CodeWriter$j</ID>
+    <ID>UnusedPrivateProperty:Util.wasmJs.kt$RegExp$flags: String? = definedExternally</ID>
+    <ID>UnusedPrivateProperty:Util.wasmJs.kt$RegExp$pattern: String</ID>
+    <ID>UseCheckOrError:CodeBlock.kt$CodeBlock.Builder$throw IllegalStateException("Named context parameter required")</ID>
+    <ID>UseCheckOrError:K2jInterop.kt$throw IllegalStateException("Array with no type! $this")</ID>
+    <ID>UseCheckOrError:K2jInterop.kt$throw IllegalStateException("Not applicable in Java!")</ID>
+    <ID>UseCheckOrError:KmTypes.kt$throw IllegalStateException("No type argument found for $id!")</ID>
+    <ID>UseCheckOrError:MultiClassInspectorTest.kt$MultiClassInspectorTest.ClassInspectorType.NONE$throw IllegalStateException("Should not be called, just here to default the jvmfield to something.")</ID>
+    <ID>UseRequire:ParameterSpec.kt$ParameterSpec$throw IllegalArgumentException("Modifiers $this are not allowed on Kotlin parameters. Allowed modifiers: $ALLOWED_PARAMETER_MODIFIERS")</ID>
+    <ID>UseRequire:ParameterizedTypeName.kt$throw IllegalArgumentException("Cannot build TypeName for $this")</ID>
+    <ID>UtilityClassWithPublicConstructor:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest$CompanionObject</ID>
+    <ID>UtilityClassWithPublicConstructor:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest$ComplexCompanionObject</ID>
+    <ID>UtilityClassWithPublicConstructor:KotlinPoetMetadataSpecsTest.kt$KotlinPoetMetadataSpecsTest$NamedCompanionObject</ID>
+    <ID>VariableNaming:AnnotatedTypeNameTest.kt$AnnotatedTypeNameTest$private val NEVER_NULL = AnnotationSpec.builder(NeverNull::class).build()</ID>
+    <ID>VariableNaming:AnnotatedTypeNameTest.kt$AnnotatedTypeNameTest$private val NN = NeverNull::class.java.canonicalName</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element1_1 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element2_1 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element2_2 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element3_1 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element3_2 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element4_1 = FakeElement()</ID>
+    <ID>VariableNaming:FileWritingTest.kt$FileWritingTest$val element4_2 = FakeElement()</ID>
+    <ID>VariableNaming:MemberNameTest.kt$MemberNameTest$val `when` = MemberName("org.mockito", "when")</ID>
+  </CurrentIssues>
+</SmellBaseline>

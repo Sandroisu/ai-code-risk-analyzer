@@ -1,0 +1,10 @@
+{
+  "repo": "gradle/gradle",
+  "date_from": "2025-03-01",
+  "date_to": "2025-08-31",
+  "max_pr": 200,
+  "detekt_report": "reports/detekt.xml",
+  "detekt_baseline": "reports/detekt-baseline.xml",
+  "ktlint_report": "reports/ktlint.json",
+  "output_json": "data/derived/dashboard.json"
+}

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Двухуровневый дашборд v1 — square/kotlinpoet</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #94a3b8;
+      --accent: #22d3ee;
+      --ok: #10b981;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+      --text: #e5e7eb
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0b1023, #0f172a);
+      color: var(--text);
+      font: 14px/1.5 system-ui, Segoe UI, Roboto, Ubuntu, Helvetica, Arial
+    }
+
+    header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: space-between
+    }
+
+    header .left {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #1f2937;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: .3px
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 16px;
+      padding: 16px
+    }
+
+    .card {
+      background: rgba(17, 24, 39, .7);
+      backdrop-filter: blur(8px);
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      overflow: hidden
+    }
+
+    .card h3 {
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid #1f2937;
+      font-size: 15px
+    }
+
+    .card .body {
+      padding: 12px 14px
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 0 16px 8px
+    }
+
+    .kpi {
+      background: rgba(17, 24, 39, .7);
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 12px
+    }
+
+    .kpi .label {
+      color: var(--muted);
+      font-size: 12px
+    }
+
+    .kpi .value {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 6px
+    }
+
+    .list {
+      max-height: 70vh;
+      overflow: auto
+    }
+
+    .item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid #1f2937;
+      cursor: pointer
+    }
+
+    .item:hover {
+      background: #0b132a
+    }
+
+    .item.active {
+      background: #0b132a
+    }
+
+    .risk {
+      min-width: 64px;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-weight: 700
+    }
+
+    .risk.low {
+      background: rgba(16, 185, 129, .12);
+      color: #86efac;
+      border: 1px solid rgba(16, 185, 129, .3)
+    }
+
+    .risk.mid {
+      background: rgba(245, 158, 11, .12);
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, .3)
+    }
+
+    .risk.high {
+      background: rgba(239, 68, 68, .12);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, .3)
+    }
+
+    .tag {
+      padding: 2px 6px;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      color: #cbd5e1;
+      font-size: 12px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .bars {
+      position: relative;
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+      height: 160px;
+    }
+
+    .bar {
+      flex: 1;
+      min-width: 6px;
+      background: linear-gradient(180deg, rgba(34, 211, 238, .85), rgba(34, 211, 238, .2));
+      border: 1px solid rgba(34, 211, 238, .35);
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .bar span {
+      display: none
+    }
+
+    /* скрываем цифры внутри баров */
+    .bar:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0b132a;
+      color: var(--text);
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 4px 6px;
+      white-space: nowrap;
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .vline {
+      display: none;
+    }
+
+    .axis {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse
+    }
+
+    .table th,
+    .table td {
+      border-bottom: 1px solid #1f2937;
+      padding: 8px 6px;
+      text-align: left;
+      font-size: 13px
+    }
+
+    .factor {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .progress {
+      height: 8px;
+      background: #0b132a;
+      border: 1px solid #1f2937;
+      border-radius: 999px;
+      overflow: hidden
+    }
+
+    .progress>i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #22d3ee, #8b5cf6)
+    }
+
+    .note {
+      padding: 10px;
+      border: 1px dashed #334155;
+      border-radius: 12px;
+      background: rgba(2, 6, 23, .6)
+    }
+
+    .footer {
+      padding: 12px 16px;
+      color: var(--muted)
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    @media(max-width:1024px) {
+      .container {
+        grid-template-columns: 1fr
+      }
+
+      .summary {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    button {
+      background: #1f2937;
+      color: #e5e7eb;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer
+    }
+
+    button:hover {
+      background: #0b132a
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="left">
+      <div class="badge">square/kotlinpoet</div>
+      <div class="badge">v1</div>
+      <div class="badge">14 дней</div>
+    </div>
+    <div>
+      <label class="badge" for="file">Импорт JSON</label>
+      <input id="file" type="file" accept="application/json" style="display:none" />
+      <button id="loadSample">Загрузить демо</button>
+    </div>
+  </header>
+  <div class="summary" id="kpis"></div>
+  <div class="container">
+    <div class="card">
+      <h3>PR: очередь по индексу риска</h3>
+      <div class="body list" id="prList"></div>
+    </div>
+    <div class="card">
+      <h3>Детали выбранного PR</h3>
+      <div class="body">
+        <div id="prHeader"
+          style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px"></div>
+        <div class="grid" style="margin-bottom:8px">
+          <div>
+            <table class="table" id="factorTable"></table>
+          </div>
+          <div>
+            <div class="note" id="llmNote"></div>
+            <table class="table" id="findingsTable" style="margin-top:8px"></table>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin:6px 0">Распределение риска</h4>
+          <div class="bars" id="riskBars"></div>
+          <div id="riskAxis" class="axis"></div>
+          <div id="riskStats" class="small"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer small">Демо-дашборд v1. Источник признаков: PR/CI/статический анализ; индекс = взвешенная сумма
+    нормированных факторов; порог высокой зоны = 0.25; демонстрационные ограничения: в открытом репозитории доступ к
+    CI/детальным отчётам ограничен, показатели без данных помечаются как н/д.</div>
+
+  <script>
+    const severityWeight = { Critical: 1.0, Major: 0.7, Minor: 0.4, Info: 0.2 }
+    const weights = { size: 0.40, spread: 0.30, hot: 0.10, sem: 0.20 };
+    let store = { prs: [] }
+    function minMaxNorm(values) { const min = Math.min(...values), max = Math.max(...values); return values.map(v => max === min ? 0 : (v - min) / (max - min)) }
+    function quantile(arr, q) { const a = [...arr].sort((x, y) => x - y); const pos = (a.length - 1) * q; const base = Math.floor(pos); const rest = pos - base; return a[base + 1] !== undefined ? a[base] + rest * (a[base + 1] - a[base]) : a[base] }
+    function metrics(list) {
+      const thr = 0.25;
+      const top = list.filter(e => (e.score || 0) >= thr);
+      const problems = list.filter(e => e.problem === true).length;
+      const conc = problems > 0 ? top.filter(e => e.problem === true).length / problems : null;
+      const falseAlarm = top.length > 0 && problems > 0 ? top.filter(e => e.problem !== true).length / top.length : null;
+      const triageVals = list.map(e => e.triage).filter(v => typeof v === "number" && v > 0).sort((a, b) => a - b);
+      const triageMed = triageVals.length ? triageVals[Math.floor(triageVals.length / 2)] : null;
+      return { thr, conc, falseAlarm, triageMed }
+    }
+    function renderKPIs(conc, falseAlarm, triageMed, thr) {
+      const k = document.getElementById("kpis"); k.innerHTML = "";
+      const items = [
+        { label: "Концентрация инцидентов в высокой зоне", value: conc == null ? "н/д" : (Math.round(conc * 100) + "%") },
+        { label: "Ложные тревоги в высокой зоне", value: falseAlarm == null ? "н/д" : (Math.round(falseAlarm * 100) + "%") },
+        { label: "Медианное время triage", value: triageMed == null ? "н/д" : (Math.round(triageMed) + " ч") },
+        { label: "Порог высокой зоны", value: thr.toFixed(2) }
+      ];
+      items.forEach(it => { const d = document.createElement("div"); d.className = "kpi"; d.innerHTML = `<div class="label">${it.label}</div><div class="value">${it.value}</div>`; k.appendChild(d); });
+    }
+    function renderList(list) {
+      const root = document.getElementById("prList"); root.innerHTML = ""
+      list.forEach(e => { const d = document.createElement("div"); const riskClass = e.zone === "high" ? "high" : e.zone === "mid" ? "mid" : "low"; d.className = "item"; d.dataset.n = e.number; d.innerHTML = `<div class="risk ${riskClass}">${e.score.toFixed(2)}</div><div style="flex:1"><div style="font-weight:700">#${e.number} ${e.title}</div><div class="small">новых находок ${e.sa_count || 0}</div></div><div class="tag">${e.zone === "high" ? "высокий" : "средний/низкий"}</div>`; d.onclick = () => select(e.number); root.appendChild(d) })
+    }
+    function renderBars(values) {
+      const root = document.getElementById("riskBars");
+      const axis = document.getElementById("riskAxis");
+      const stats = document.getElementById("riskStats");
+      root.innerHTML = ""; axis.innerHTML = ""; stats.innerHTML = "";
+      if (!values || !values.length) return;
+      const BINS = 24;
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      const span = (max - min) || 1;
+      const w = span / BINS;
+      const buckets = new Array(BINS).fill(0);
+      values.forEach(v => {
+        let i = Math.floor((v - min) / w);
+        if (i < 0) i = 0;
+        if (i >= BINS) i = BINS - 1;
+        buckets[i] += 1;
+      });
+      const maxCount = Math.max(...buckets) || 1;
+      buckets.forEach((count, i) => {
+        const b = document.createElement("div");
+        b.className = "bar";
+        const h = Math.round((count / maxCount) * 140);
+        b.style.height = Math.max(6, h) + "px";
+        const from = (min + i * w).toFixed(2);
+        const to = (min + (i + 1) * w).toFixed(2);
+        b.setAttribute("data-tip", `${from}–${to}: ${count} PR`);
+        root.appendChild(b);
+      });
+      const TICKS = 5;
+      for (let t = 0; t < TICKS; t++) {
+        const p = t / (TICKS - 1);
+        const val = (min + p * span).toFixed(2);
+        const tick = document.createElement("span");
+        tick.textContent = val;
+        axis.appendChild(tick);
+      }
+      const thr = 0.25;
+      const sorted = values.slice().sort((a, b) => a - b);
+      const median = sorted[Math.floor(sorted.length / 2)];
+      const avg = values.reduce((a, b) => a + b, 0) / values.length;
+      stats.textContent = `Мин ${min.toFixed(2)} • Медиана ${median.toFixed(2)} • Среднее ${avg.toFixed(2)} • Порог высокой зоны 0.25 • Макс ${max.toFixed(2)} • n=${values.length}`;
+    }
+    function select(n) { const list = document.querySelectorAll(".item"); list.forEach(i => i.classList.toggle("active", i.dataset.n == n)); const e = store.prs.find(x => x.number == n); renderDetail(e) }
+    function renderDetail(e) {
+      const h = document.getElementById("prHeader");
+      const riskLabel = e.zone === "high" ? "высокий" : "средний/низкий";
+      h.innerHTML = `<div><div style="font-size:18px;font-weight:800">#${e.number} ${e.title}</div><div class="small">Индекс ${e.score.toFixed(2)} • Риск: ${riskLabel}</div></div><div class="tag">${e.problem === true ? "подтверждённый инцидент" : "без инцидента"}</div>`;
+      const ft = document.getElementById("factorTable");
+      ft.innerHTML = "";
+      const rows = [
+        ["Размер диффа", e.diff_norm || 0, 0.40],
+        ["Распылённость", e.spread_norm || 0, 0.30],
+        ["Горячесть файлов", e.hot_norm || 0, 0.10],
+        ["Семантическая оценка", (typeof e.semScore === "number" ? e.semScore : 0), 0.20]
+      ];
+      const thead = document.createElement("thead");
+      thead.innerHTML = "<tr><th>Фактор</th><th>Норм.</th><th>Вес</th><th>Вклад</th></tr>";
+      ft.appendChild(thead);
+      const tb = document.createElement("tbody");
+      rows.forEach(r => {
+        const tr = document.createElement("tr");
+        const contrib = r[1] * r[2];
+        tr.innerHTML = `<td class="factor">${r[0]}</td><td>${(r[1] || 0).toFixed(2)}</td><td>${r[2].toFixed(2)}</td><td style="width:45%"><div class="progress"><i style="width:${Math.round((contrib || 0) * 100)}%"></i></div></td>`;
+        tb.appendChild(tr);
+      });
+      ft.appendChild(tb);
+      const note = document.getElementById("llmNote");
+      const cat = e.semCategory || "Общее";
+      const txt = e.semText || "Пояснение недоступно.";
+      const origin = e.semOrigin === "llm" ? "LLM" : "rule";
+      const semVal = (typeof e.semScore === "number" ? e.semScore : 0);
+      note.innerHTML = `<div class="tag">${cat}</div><div class="small" style="display:inline-block;margin-left:6px;color:#94a3b8">источник: ${origin} • semScore: ${semVal.toFixed(2)}</div><div>${txt}</div>`;
+
+      const find = document.getElementById("findingsTable");
+      find.innerHTML = "";
+      const th = document.createElement("thead");
+      th.innerHTML = "<tr><th>Инструмент</th><th>Правило</th><th>Тяжесть</th><th>Файл:строка</th></tr>";
+      find.appendChild(th);
+      const tb2 = document.createElement("tbody");
+      (e.findings || []).forEach(f => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${f.tool}</td><td>${f.rule}</td><td>${f.severity}</td><td>${f.file}:${f.line}</td>`;
+        tb2.appendChild(tr);
+      });
+      find.appendChild(tb2);
+    }
+    function applyData(json) {
+      store = json;
+      const thrFix = 0.25;
+      store.prs = store.prs
+        .map(e => ({ ...e, zone: (e.score || 0) >= thrFix ? "high" : "mid" }))
+        .sort((a, b) => b.score - a.score);
+      const m = metrics(store.prs);
+      renderKPIs(m.conc, m.falseAlarm, m.triageMed, m.thr);
+      renderList(store.prs);
+      renderBars(store.prs.map(e => e.score));
+      if (store.prs.length > 0) select(store.prs[0].number);
+    }
+    document.getElementById("file").addEventListener("change", e => { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { const j = JSON.parse(ev.target.result); applyData(j) }; r.readAsText(f) })
+    document.getElementById("loadSample").addEventListener("click", () => { fetch("dashboard_sample.json").then(r => r.json()).then(j => applyData(j)) })
+  </script>
+</body>
+
+</html>
